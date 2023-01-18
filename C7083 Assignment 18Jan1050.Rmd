@@ -1,0 +1,90 @@
+---
+title: "C7083 Assignment 13Jan 1644"
+author: "A T Chamberlain"
+date: "2023-01-13 1644"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# set up libraries required installing them first if need be. 
+if(!require("tidyverse")) install.packages("tidyverse")
+if(!require("plotly")) install.packages("plotly")
+
+
+```
+
+## R Markdown
+
+Plan 
+Work with data direct from Github. Folder is at:  https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29
+
+Being USA data all units are in pounds which is 0.45359 kilograms. All data will be converted to kilograms so I can compare with own experiences of UK performance. 
+
+Background press articles have been supplied at: 
+https://www.npr.org/2019/01/09/683339929/nobody-is-moving-our-cheese-american-surplus-reaches-record-high and 
+ 
+https://www.washingtonpost.com/news/wonk/wp/2018/06/28/americas-cheese-stockpile-just-hit-an-all-time-high/?noredirect=on
+
+## Observations 
+
+- The theme of both articles was that there is a growing milk/cheese surplus with the Washington Post reported the stockpile had grown from 481 million in 1993 to 1.39 billion pounds in 2018. They considered this was due to increasing production and a falling consumer demand for milk and cheese. Milk does not store well so any surplus is made into cheese for storage and export. About 14% of national milk production is exported but trade issues with Mexico, China and elsewhere may limit export potential. As stockpiles grow and stores fill there is pressure not to make cheese and so cheese and thus milk prices fall. 
+
+- Having worked in the USA dairy sector my personal observations in 2016 in Wisconsin at WDE (World Dairy Expo) was that most cheese was plain, 'American' cheese - there was little diversification. Has this contributed to the surplus?  
+
+- The popular industry press reports that much of USA is suffering long term drought and reports that USA dairy farms are getting bigger and concentrating in a smaller number of states - what evidence is there for this. 
+
+
+
+
+
+Data 
+
+I have downloaded four datasets and will use these for my analyses 
+
+Use a table to list these and to list their dictionaries 
+
+Should extend the datasets up to 2022 for completeness. Github says they come from 
+https://www.ers.usda.gov/data-products/dairy-data/dairy-data/
+
+state_milk_production 
+  csv in github has v odd number formatting 
+  in xls Maine 2017 630 million pounds
+  in Github data file 619e6 
+  in beyond 2017 - 618E+02  = 618 million pounds 
+  Wrangled in Excel/NotePad+ so that 
+    before 2017     630e6 
+    2017 onwards    6.18e8 
+
+Tidy datasets are 
+Cheese per cap tidy_xlsx    
+  1970-2021 cheese consumed (lbs/head) by cheese type 
+State milk production to 2021 tidy.xlsx
+  1970 - 2021 milk produced per state and region (million lbs/year)
+  1970 - 2021 cows, yields, production by region
+
+STILL WANT SOME CONSUMPTION DATA   
+  
+  Have three 'tidy' data sets 
+    where possible have added in data up to 2021 
+    Have taken them back to Excel format to add in a data dictionary and to double check they are tidy 
+    Will then take the data page back to csv format as this works well between Excel and R. 
+    Will store the three Excel and csv files on Github and pull data from there to avoid submission issues   
+
+Third dataset milkcow_facts_tidy.xlsx
+
+
+  
+
+Graphic Critic 
+
+Washington Post has a 'good' image on cheese stockpiles that can be used. Source: https://www.washingtonpost.com/news/wonk/wp/2018/06/28/americas-cheese-stockpile-just-hit-an-all-time-high/?noredirect=on
+
+Try and find another 'milk' graph that is poor. 
+
+NOTE To insert a jpg file use  ! [Alt text] (/Users/Antonio/Documents/images/tufte.book.jpg)
+
+```{r cars}
+summary(cars)
+```
